@@ -31,13 +31,17 @@ class DefaultController extends Controller
             ->get('doctrine')
             ->getRepository('AppBundle:Interessado')
             ->createQueryBuilder('interessado');
-        $qb->select('interessado')
+        $qb->select('interessado,convite')
            ->innerJoin('interessado.convite','convite')
             ->where('1 = 1');
 
         if($pesquisa['nome']){
             $qb->andWhere('UPPER(interessado.nome) LIKE UPPER(:nome)')
                ->setParameter('nome', '%' . mb_strtoupper($pesquisa['nome']) . '%');
+        }
+        if($pesquisa['convite']){
+            $qb->andWhere('convite.id = :convite_id')
+               ->setParameter('convite_id', $pesquisa['convite']);
         }
 
         $result = $qb->getQuery()->getArrayResult();
