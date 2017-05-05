@@ -1,0 +1,26 @@
+paths:
+    migrations: %%PHINX_CONFIG_DIR%%/migrations
+    seeds: %%PHINX_CONFIG_DIR%%/seeds
+environments:
+
+    default_migration_table: "phinxlog"
+    default_database: dev
+
+    dev:
+        adapter: mysql
+        host: localhost
+        user: root
+        pass: ''
+        port: 3006
+        charset: utf8
+        schema: recepcao
+        name: recepcao
+
+    # hlg:
+    #     adapter: pgsql
+    #     host: 192.168.10.192
+    #     name: vogel
+    #     user: postgres
+    #     pass: !#V0gelTel3com*@port: 5432
+    #     charset: utf8
+    #     schema: operacao
