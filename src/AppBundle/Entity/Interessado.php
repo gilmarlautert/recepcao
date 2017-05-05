@@ -167,5 +167,62 @@ class Interessado
     {
         return $this->convite;
     }
-}
+    /**
+     * @var \DateTime
+     */
+    private $dataCriacao = 'CURRENT_TIMESTAMP';
 
+    /**
+     * @var string
+     */
+    private $usuario = 'SISTEMA';
+
+
+    /**
+     * Set dataCriacao
+     *
+     * @param \DateTime $dataCriacao
+     *
+     * @return Interessado
+     */
+    public function setDataCriacao($dataCriacao)
+    {
+        $this->dataCriacao = $dataCriacao;
+
+        return $this;
+    }
+
+    /**
+     * Get dataCriacao
+     *
+     * @return \DateTime
+     */
+    public function getDataCriacao()
+    {
+        return $this->dataCriacao;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     *
+     * @return Interessado
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+}

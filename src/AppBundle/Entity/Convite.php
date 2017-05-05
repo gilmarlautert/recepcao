@@ -52,4 +52,3 @@ class Convite
         return $this->descricao;
     }
 }
-
