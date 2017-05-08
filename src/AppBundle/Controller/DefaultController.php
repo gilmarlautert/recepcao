@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -11,6 +12,7 @@ class DefaultController extends Controller
 {
     /**
      * @Route("/interessados", name="interessados")
+     * @Method({"GET"})
      */
     public function getInteressadosAction(Request $request)
     {
@@ -51,6 +53,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/convites", name="convites")
+     * @Method({"GET"})
      */
     public function getConvitesAction(Request $request)
     {
@@ -68,6 +71,15 @@ class DefaultController extends Controller
         $result = $qb->select('convite')
            ->getQuery()->getArrayResult();
         return  new JsonResponse($result);
-        
+    }
+
+    /**
+     * @Route("/convites", name="convites")
+     * @Method({"POST"})
+     */
+    public function postConvitesAction(Request $request)
+    {
+        $result = $request->all();
+        return  new JsonResponse($result);
     }
 }
