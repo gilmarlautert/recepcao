@@ -1,0 +1,40 @@
+<div class="panel panel-primary" id="panel_banners" style="width:60%;min-width:400px;margin:auto; color:#444">
+	<div class="panel-heading">
+		<h3 class="panel-title">Nova Foto</h3>
+	</div>
+	<div class="panel-body" style="overflow: auto;">
+		<div class="well">
+			<div class="row">
+				<form name="formFoto" ng-if="!fotoDataRetorno.abreLoading">
+				<div class="col-md-12">
+				  <div ng-if="foto.id_album">
+				  	<a href="#/album/{{foto.id_album}}" class="btn btn-block btn-info">Ir para Album</a>
+				  </div>
+				  <fieldset>Foto (Max. 5 Fotos por vez)</fieldset>
+				  <input valid-file class="form-control" name="foto[]" placeholder="Foto" type="file" ng-minlength="5" style="margin:5px 0px;" accept="image/jpeg" file-model="imagem" ng-required="true" multiple/>
+				  <fieldset>Nome Album</fieldset>
+				  <select class="form-control" name="album" ng-model="foto.id_album" ng-options="alb.id as alb.nome for alb in albuns" style="margin:5px 0px;">
+					<option value="" >--Selecione um Album--</option>
+				  </select>		
+				  
+				  <button class="btn btn-primary btn-block"  ng-click="salvarFoto(foto,imagem,fotoDataRetorno)"  ng-disabled="imagem.length==0 || imagem.length==null || imagem.length>5 " >Salvar</button>
+				  <div class="alert alert-danger" ng-show="imagem.length>5">
+					Número máximo de 5 imagens excedido.
+				  </div>
+				  <div ng-class="fotoDataRetorno.message.status" ng-show="fotoDataRetorno.message">
+					{{fotoDataRetorno.message.text}}
+				  </div>
+				</div>
+				</form>
+				<div ng-if="fotoDataRetorno.abreLoading">
+					<h4  style="color: #222 !important">Salvando Imagens</h4>
+					<div class="progress">
+					  <div class="progress-bar" role="progressbar" aria-valuenow="{{fotoDataRetorno.percentual*100}}" aria-valuemin="0" aria-valuemax="100" style="width: {{fotoDataRetorno.percentual*100}}%;">
+					    {{Math.round(fotoDataRetorno.percentual*100)}}%
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>  
+	</div>
+</div>

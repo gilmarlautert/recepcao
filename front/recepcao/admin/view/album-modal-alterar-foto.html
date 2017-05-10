@@ -1,0 +1,25 @@
+<div class="modal fade" id="album-alterar-foto">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title font-dark-gray">Alterar Foto</h4>
+      </div>
+      <div class="modal-body"  style="height:450px;overflow-y:auto;">
+        <div class="row">
+          <div ng-repeat="foto in albumItem">
+            <div class="col-md-6 ">
+            <div style="padding:5px;" ng-class="foto.selecionada" ng-click="selecionarImagem(foto)">
+              <img ng-src="../{{foto.thumb}}" style="width:200px; height:120px; margin:auto;"/>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" ng-disabled="!fotoSelecionada.isSelecionada" ng-click="alterImagem(fotoSelecionada)"  data-dismiss="modal">Alterar Imagem</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

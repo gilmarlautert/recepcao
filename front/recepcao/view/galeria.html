@@ -1,0 +1,28 @@
+<div id="menu-3" class="content our-gallery">
+    <div class="page-header">
+        <h2 class="page-title">Galeria</h2>
+    </div>
+    <div class="content-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="widget-title">Veja nosso portifólio</h3>
+            </div>
+        </div> 
+        <div class="row">
+            <div ng-repeat="item in categoria">
+                <div class="col-md-4 col-sm-6 mix bookexterno">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb embed-responsive embed-responsive-16by9">
+                            <a ng-href="#/categoria/{{item.categoria}}" >
+                                <img ng-src="{{item.src}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">{{item.categoria}}</h4>
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+        </div> 
+    </div> 
+</div> 

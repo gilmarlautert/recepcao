@@ -1,0 +1,37 @@
+<div class="panel panel-primary" id="panel_banners" style="width:60%;min-width:400px;margin:auto; color:#444">
+  <div class="panel-heading">
+    <h3 class="panel-title">Videos</h3>
+  </div>
+  <div class="panel-body" style="overflow: auto;">
+    
+    <div ng-repeat="video in videos">
+      <div class="row well">
+          <div class="col-md-6 item_Galeria">
+              <div class=" embed-responsive embed-responsive-16by9 ">
+                  <div ng-bind-html="renderHtml(video.url_embed)"></div>
+              </div>
+          </div>
+          <div class="col-md-6 item_Galeria">
+              <div class="row">
+                <div class="col-md-12">
+                  <button ng-if="video.habilitado==1" class="btn btn-warning btn-block" ng-click="desabilitaVideo(video)">Desabilitar</button>
+                  <button ng-if="video.habilitado==0" class="btn btn-success btn-block" ng-click="habilitaVideo(video)">Habilitar</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-danger btn-block" ng-click="excluirVideo(video)">Excluir</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button class="btn btn-default btn-block" ng-click="alterarVideo(video)" data-toggle="modal" data-target="#modal-videos">Alterar</button>
+                </div>
+              </div> 
+          </div>          
+      </div>    
+    </div>
+    <button class="btn btn-primary btn-block"  data-toggle="modal" data-target="#modal-videos"  ng-click="alterarVideo({})">Novo Vídeo</button>
+  </div>
+</div>
+<div ng-include="'view/modal-videos.html'"> </div>

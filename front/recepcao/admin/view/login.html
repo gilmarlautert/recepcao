@@ -1,0 +1,11 @@
+<div class="jumbotron form-login" ng-controller="loginController">
+	<div ng-include="'../view/logo-admin.html'"></div>
+	<form name="loginForm">
+		<input class="form-control" placeholder="Usuário" type="text" name="email" ng-model="login.email" ng-required="true"/>
+		<input class="form-control" placeholder="Senha" type="password" name="password" ng-model="login.password" ng-required="true" />
+	</form>			
+	<button class="btn btn-primary btn-block" ng-click="tryLogin(login)" ng-disabled="loginForm.$invalid" >Realizar Login</button> 
+	<div class="alert alert-danger" ng-show="message">
+		{{message}}
+	</div>
+</div>

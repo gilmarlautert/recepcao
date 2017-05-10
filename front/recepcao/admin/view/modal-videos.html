@@ -1,0 +1,20 @@
+<div class="modal fade" id="modal-videos">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title font-dark-gray" ng-if="video.id">Alterar Vídeo</h4>
+        <h4 class="modal-title font-dark-gray" ng-if="!video.id">Adicionar Vídeo</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <textarea class="form-control" placeholder="cole aqui a URL do vídeo" ng-model="video.url_embed" rows="5"></textarea>
+        </div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" ng-disabled="!video.url_embed" ng-click="salvarVideo(video)"  data-dismiss="modal">Salvar Vídeo</button>
+      </div>
+    </div>
+  </div>
+</div>

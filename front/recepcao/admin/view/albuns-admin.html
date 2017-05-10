@@ -1,0 +1,42 @@
+<div class="panel panel-primary" id="panel_banners" style="width:60%;min-width:400px;margin:auto; color:#444">
+  <div class="panel-heading">
+    <h3 class="panel-title">Albuns</h3>
+  </div>
+  <div class="panel-body" style="overflow: auto;">
+    
+    <table class="table table-striped">
+        <tr>
+          <td><b>Nome Album</b></td>
+          <td><b>Imagem Album</b></td>
+          <td>Desabilitar</td>
+          <td>Excluir</td>
+          <td>Alterar</td>
+        </tr>
+        <tr ng-repeat="item in categoriaItem">         
+            <td>{{item.nome}}</td>
+            <td>
+              <div class="gallery-item">
+                  <div class="gallery-thumb" style="width:120px;margin-top:0px;">
+                    <img ng-src="../{{item.src}}" alt="Cristiano Cardoso Fotográfia" height="60">
+                    
+                    <a class="overlay-g" ng-href="../{{item.src}}" data-rel="lightbox">
+                        <i ng-href="../{{item.src}}" data-rel="lightbox" class="fa fa-expand"></i>
+                    </a>
+                  </div>
+                </div>
+            </td>
+            <td>
+              <button ng-if="item.habilitado==1" class="btn btn-warning" ng-click="desabilitaCategoria(item)">Desabilitar</button>
+              <button ng-if="item.habilitado==0" class="btn btn-success" ng-click="habilitaCategoria(item)">Habilitar</button>
+            </td>   
+            <td>
+              <button class="btn btn-danger" ng-click="excluirCategoria(item)">Excluir</button>
+            </td>  
+            <td>
+              <a class="btn btn-default" ng-href="#/album/{{item.id}}">Alterar</a>
+            </td>  
+        </tr>
+    </table>
+    <a class="btn btn-primary btn-block" ng-disabled="banners.length>=maxBannerItens" href="#/novo/album">Novo Album</a>
+  </div>
+</div>

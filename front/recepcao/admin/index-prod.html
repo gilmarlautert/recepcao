@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="cristianoCardosoFotografia">
+<head>
+	<title>Admin - Site</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="A&K Tecnologia">
+    <meta name="keywords" content="fotografia,fotográfia, cristiano cardoso, cristiano cardoso fotofrafia, cristiano cardoso fotofráfia, cristianocardosofotofráfia, cristianocardosofotofrafia, cristianocardoso.fotofrafia,fotografia poa,fotografo poa,fotografia porto alegre,fotográfo porto alegre,fotografia gravatai,fotográfo gravatai" />
+    <meta name="description" content="Cristiano Cardoso Fotofragia, Gravataí RS  " />
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    
+    <!-- CSS Bootstrap & Custom -->
+    <link href="../css/styles.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+    .form-login{
+    	margin: auto;
+    	margin-top: 40px;
+    	min-width: 400px;
+    	width: 50%;
+    }
+    .navbar-brand {
+    	padding: 5px;
+    }
+    .logoff-nav{
+    	margin: 8px;
+    }
+    #bs-example-navbar-collapse-1 .navbar-nav > li a:hover{
+    	background-color: #dedede;
+    }
+    </style>
+    
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../images/ico/logo-min.ico">
+    <script type="text/javascript">
+        window.smartlook||(function(d) {
+        var o=smartlook=function(){ o.api.push(arguments)},s=d.getElementsByTagName('script')[0];
+        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+        c.charset='utf-8';c.src='//rec.getsmartlook.com/bundle.js';s.parentNode.insertBefore(c,s);
+        })(document);
+        smartlook('init', 'ca27f54728daa2437e3fcbd0ae67319dfa14e784');
+    </script>
+</head>
+<body ng-controller="applicationController">
+	<div ng-if="isLogado()">
+		<div ng-include="'view/menu-admin.html'"></div>
+		<div ng-view></div>
+	</div>
+	<div ng-if="!isLogado()">
+        <div ng-include="'view/login.html'"></div>
+		
+	</div>
+    
+    <script src="js/all.min.js"></script>
+    <!--
+
+    <script src="../lib/jquerylibs/jquery-1.10.2.min.js"></script>
+    <script src="../lib/jquerylibs/modernizr.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/PgwSlider-master/pgwslider.min.js"></script>
+    <script src="../lib/jquerylibs/jquery.mixitup.min.js"></script>
+    <script src="../lib/jquerylibs/jquery.nicescroll.min.js"></script>
+    <script src="../js/jquery.lightbox.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="../lib/angular/angular-route.js"></script>
+    <script src="../js/templatemo_custom.js"></script>
+    <script src="../js/app.js"></script>
+
+    <script src="../js/value/configValue.js"></script> 
+    
+    <script src="js/controllers/applicationController.js"></script> 
+    <script src="js/controllers/loginController.js"></script> 
+    <script src="../js/controllers/bannerController.js"></script>      
+    <script src="../js/controllers/fotosController.js"></script>     
+    <script src="../js/controllers/categoriaController.js"></script>     
+    <script src="../js/controllers/albumController.js"></script>      
+    <script src="js/controllers/novaFotoController.js"></script>     
+    <script src="js/controllers/novaCategoriaController.js"></script>
+    <script src="js/controllers/novoAlbumController.js"></script>
+    <script src="js/controllers/novoBannerController.js"></script>
+    
+
+    <script src="../js/service/bannerAPIService.js"></script> 
+    <script src="../js/service/fotosAPIService.js"></script> 
+    <script src="../js/service/categoriaAPIService.js"></script> 
+    <script src="../js/service/albumAPIService.js"></script> 
+
+    <script src="js/directives/fileModel.js"></script> 
+    
+    <script src="js/service/authInterceptor.js"></script>
+    <script src="js/service/loginAPIService.js"></script>
+    <script src="js/config/routeConfig.js"></script>
+    -->
+</body>
+</html>

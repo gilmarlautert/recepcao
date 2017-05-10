@@ -1,0 +1,65 @@
+<div class="panel panel-primary" id="panel_banners" style="width:60%;min-width:400px;margin:auto; color:#444">
+  <div class="panel-heading">
+    <h3 class="panel-title">Alterar Album</h3>
+  </div>
+  <div class="panel-body" style="overflow: auto;">
+    <div class="well">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="gallery-item">
+            <div class="gallery-thumb" style="width:120px;margin-top:0px;">
+              <img ng-src="../{{album.src}}" alt="Cristiano Cardoso Fotográfia" height="60">
+              <a class="overlay-g" a ng-href="../{{album.src}}" data-rel="lightbox">
+                  <i ng-href="../{{album.src}}" data-rel="lightbox" class="fa fa-expand"></i>
+              </a>
+            </div>
+          </div>
+          <button class="btn btn-primary" style="margin:auto; margin-top:5px;"  data-toggle="modal" data-target="#album-alterar-foto">Trocar Foto Album</button>
+        </div>
+        <div class="col-md-6">
+          <fieldset>Nome Album</fieldset>
+          <input  class="form-control"  type="text" ng-minlength="5" style="margin:5px 0px;" ng-model="album.nome"/>
+          <button class="btn btn-primary" ng-click="salvarAlbum(album)">Salvar</button>
+          <div ng-class="message.status" ng-show="message">
+            {{message.text}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+        <tr>
+          <td><b>Imagem</b></td>
+          <td>Desabilitar</td>
+          <td>Desvincular</td>
+          <td>Excluir</td>
+        </tr>
+        <tr ng-repeat="foto in albumItem">         
+            
+            <td>
+              <div class="gallery-item">
+                  <div class="gallery-thumb" style="width:120px;margin-top:0px;">
+                    <img ng-src="../{{foto.thumb}}" alt="Cristiano Cardoso Fotográfia" height="60">
+                    
+                    <a class="overlay-g" a href="../{{foto.src}}" data-rel="lightbox">
+                        <i href="../{{foto.src}}" data-rel="lightbox" class="fa fa-expand"></i>
+                    </a>
+                  </div>
+                </div>
+            </td>
+            <td>
+              <button ng-if="foto.habilitado==1" class="btn btn-warning" ng-click="desabilitaFoto(foto)">Desabilitar</button>
+              <button ng-if="foto.habilitado==0" class="btn btn-success" ng-click="habilitaFoto(foto)">Habilitar</button>
+            </td>   
+            <td>
+              <button class="btn btn-info" ng-click="desvincularFoto(foto)">Desvincular</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" ng-click="excluirFoto(foto)">Excluir</button>
+            </td>  
+        </tr>
+    </table>
+    <a class="btn btn-primary btn-block" ng-href="#/foto/nova/album/{{album.id}}">Nova Foto</a>
+  </div>
+</div>
+
+<div ng-include="'view/album-modal-alterar-foto.html'"></div>

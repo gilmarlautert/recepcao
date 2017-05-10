@@ -1,0 +1,37 @@
+<div class="content our-gallery">
+    <div class="page-header">
+        <div class="col-md-4">
+            <h2 class="page-title">
+                <a ng-href="#/galeria" style="color:#fff">
+                    <span class="fa fa-arrow-circle-left"></span>
+                    Voltar
+                </a>
+            </h2>
+
+        </div>
+        <div class="col-md-8">
+            <h2 class="page-title">{{nome}}</h2>
+            
+        </div>
+        <div style="clear:both"></div>
+        <!--<h2 class="page-title">{{categoriaItem.categoria}}</h2>-->
+    </div>
+    <div class="content-inner">
+        <div class="row">
+            <div ng-repeat="item in categoriaItem">
+                <div class="col-md-4 col-sm-6 mix bookexterno">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb embed-responsive embed-responsive-16by9">
+                            <a ng-href="#/album/{{item.id}}/{{nome}}/{{item.nome}}" >
+                                <img ng-src="{{item.src}}" alt="" />
+                            </a>
+                        </div>
+                        <div class="gallery-content">
+                            <h4 class="gallery-title">{{item.nome}}</h4>
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+        </div> 
+    </div> 
+</div> 

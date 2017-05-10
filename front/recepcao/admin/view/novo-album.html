@@ -1,0 +1,26 @@
+<div class="panel panel-primary" id="panel_banners" style="width:60%;min-width:400px;margin:auto; color:#444">
+	<div class="panel-heading">
+		<h3 class="panel-title">Novo Album</h3>
+	</div>
+	<div class="panel-body" style="overflow: auto;">
+		<div class="well">
+			<div class="row">
+				<form name="formAlbum">
+				<div class="alert alert-info">
+				  	Lembrete: TODOS os albuns são inseridas desabilitadas.
+				</div>
+				<div class="col-md-12">
+				  <fieldset>Nome Album</fieldset>
+				  <input class="form-control" name="album" placeholder="Nome do Album" type="text" ng-minlength="5" style="margin:5px 0px;" ng-model="album.nome" ng-required="true" />
+				 
+				  <button class="btn btn-primary btn-block"  ng-click="salvarAlbum(album)"  ng-disabled="formAlbum.$invalid" >Salvar</button>
+				</div>
+				<div ng-class="message.status" ng-show="message">
+					{{message.text}}
+				</div>
+				</form>
+			</div>
+		</div>  
+
+	</div>
+</div>

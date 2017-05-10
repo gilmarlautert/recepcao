@@ -1,0 +1,23 @@
+{
+  "name": "recepcao",
+  "homepage": "https://github.com/gilmarlautert/recepcao",
+  "authors": [
+    "gilmarlautert@gmail.com"
+  ],
+  "description": "sistema recepcao",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "isad",
+    "monte-belo"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
